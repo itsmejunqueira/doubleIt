@@ -1,0 +1,48 @@
+.purple-gradient{
+    background: rgb(98,50,98);
+    background: linear-gradient(180deg, rgba(98,50,98,1) 0%, rgba(242,216,219,1) 100%);
+}
+
+.white-container{
+    background: #FFFDFD;
+}
+
+.login-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px;
+    margin: 0px;
+}
+
+.login-box {
+    min-width: 576px;
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-holder{
+    width: 384px;
+    align-items: center;
+    //margin: 0px 10px;
+    h1{
+        font-weight: bold;
+        font-size: 36px;
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #CCCCCC; /* old IE */
+    background-color: #CCCCCC; /* Modern Browsers */
+}
+
+.logo{
+    width: 100%;
+}

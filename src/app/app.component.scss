@@ -1,0 +1,13 @@
+.powered-holder{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    flex-direction: column;
+    margin: 30px;
+    .smaller-text{
+        font-size: 13px;
+    }
+    .larger-text{
+        font-size: 15px;
+    }   
+}

@@ -1,0 +1,25 @@
+<div class="header-holder container-fluid primary navbar navbar-expand-lg">
+    <div class="col-8 offset-md-2 d-flex justify-content-between align-items-center">
+        <span class="navbar-brand">
+            <a routerLink="/">
+                <img class="logo" src="../../assets/logo.png" alt="logo">
+            </a>
+        </span>
+        <div class="nav-menu"> 
+          <ul> 
+              <li [ngClass]="getRoute('inicio')">
+                  <a [routerLink]="['/home']">Inicio</a>  
+              </li>
+              <li [ngClass]="getRoute('produtos')">
+                <a [routerLink]="['/produtos']">Produtos</a>
+                  
+              </li>
+          </ul>
+        </div>
+        <div class="navbar-nav d-flex align-items-center">
+            <span class="v-divider"></span>
+            <img class="user" src="../../assets/perfil.png" alt="user">
+            <span class="ml-2"> Leticia Junqueira</span>
+        </div>
+    </div>
+</div>

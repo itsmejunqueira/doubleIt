@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "https://reqres.in",
+  USERDATA_KEY: 'jhfalsjdf',
+  appVersion: '1geA4563b'
 };
 
 /*

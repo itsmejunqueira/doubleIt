@@ -1,0 +1,85 @@
+<div class="body">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1>Meus Produtos.</h1>     
+      <button type="add_product" class="btn btn-purple">
+        Adicionar produto
+      </button>  
+    </div>
+    <hr>
+    <div class="items">
+      <mat-card class="products">
+        <img mat-card-image src="../../assets/MacBook_Pro_16.png" alt="Photo of a Shiba Inu">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Editar</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>excluir</span>
+          </button>
+        </mat-menu>
+  
+        <mat-card-content>
+          <mat-card-title>MacBook Pro 2021 16'</mat-card-title>
+          <p>
+            MacBook Pro com a melhor tecnologia do mercado, trazendo muita inovação e velocidade.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-card-title>R$ 17.499,00 </mat-card-title>
+          <button mat-button>Apple</button>
+          <button mat-button>MacBook</button>
+          <hr>
+        </mat-card-actions>
+      </mat-card>
+  
+      <mat-card class="products">
+        <img mat-card-image src="../../assets/MacBook_ Air_256.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <mat-card-title>MacBook Air 256GB 2020</mat-card-title>
+          <p>
+            MacBook Air com a melhor tecnologia do mercado, trazendo muita inovação e velocidade. </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-card-title>R$ 10.499,00 </mat-card-title>
+          <button mat-button>Apple</button>
+          <button mat-button>MacBook</button>
+          <hr>
+        </mat-card-actions>
+      </mat-card>
+  
+      <mat-card class="products">
+        <img mat-card-image src="../../assets/MacBook_ Air_512.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <mat-card-title>MacBook Air 512 GB 2021</mat-card-title>
+          <p>
+            MacBook Air com a melhor tecnologia do mercado, trazendo muita inovação e velocidade.
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-card-title>R$ 13.499,00 </mat-card-title>
+          <button mat-button>Apple</button>
+          <button mat-button>MacBook</button>
+          <hr>
+        </mat-card-actions>
+      </mat-card>
+  
+      <mat-card class="products">
+        <img mat-card-image src="../../assets/MacBook_Pro_2019.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <mat-card-title>MacBook Pro 2019 16"</mat-card-title>
+          <p>
+            MacBook Pro com a melhor tecnologia do mercado, trazendo muita inovação e velocidade.
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-card-title>R$ 12.499,00 </mat-card-title>
+          <button mat-button>Apple</button>
+          <button mat-button>MacBook</button>
+          <hr>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

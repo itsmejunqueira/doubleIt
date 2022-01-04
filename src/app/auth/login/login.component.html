@@ -1,0 +1,21 @@
+<div class="login-body purple-gradient">
+    <div class="white-container h-100 d-flex justify-content-center">
+        <form [formGroup]="formlogin" class="login-box" (ngSubmit)="submit()">
+            <div class="input-holder">
+                <h1>Entre.</h1>
+                <hr>
+                <mat-form-field appearance="outline">
+                    <mat-label>Login</mat-label>
+                    <input matInput formControlName="login" id="login">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput id="senha" formControlName="senha">
+                </mat-form-field>
+                <button type="submit" class="btn btn-purple btn-block mt-3">
+                    Entrar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
