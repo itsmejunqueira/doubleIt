@@ -11,6 +11,14 @@ Sistema de cadastro de produtos
  * Html/Css
  * API https://reqres.in/ 
 
+ <img src="../../assets/login.JPG" alt="Login"/>
+  <img src="../../assets/produtos.JPG" alt="Login"/>
+ <img src="../../assets/editar.JPG" alt="Login"/>
+ <img src="../../assets/addproduto.JPG" alt="Login"/>
+  <img src="../../assets/menu.JPG" alt="Login"/>
+
+
+
 📕Installation
 ## Development server
 
