@@ -17,7 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list'; 
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 function appInitializer(authService: AuthService) {
   return () => {
@@ -46,7 +46,9 @@ function appInitializer(authService: AuthService) {
     MatIconModule,    
     MatFormFieldModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+     
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
