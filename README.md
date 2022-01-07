@@ -12,14 +12,11 @@ Sistema de cadastro de produtos
  * Angular Material and Bootstrap 4.6
  * API https://reqres.in/ 
 
-![login](https://github.com/itsmejunqueira/doubleit/src/assets/login.JPG)
-
- <img src="../../assets/login.JPG" alt="Login"/>
-  <img src="../../assets/produtos.JPG" alt="Login"/>
- <img src="../../assets/editar.JPG" alt="Login"/>
- <img src="../../assets/addproduto.JPG" alt="Login"/>
-  <img src="../../assets/menu.JPG" alt="Login"/>
-
+![login](https://github.com/itsmejunqueira/doubleIt/blob/master/src/assets/login.JPG)
+![produtos](https://github.com/itsmejunqueira/doubleIt/blob/master/src/assets/produtos.JPG)
+![editar](https://github.com/itsmejunqueira/doubleIt/blob/master/src/assets/editar.JPG)
+![Adicionar](https://github.com/itsmejunqueira/doubleIt/blob/master/src/assets/addproduto.JPG)
+![menu](https://github.com/itsmejunqueira/doubleIt/blob/master/src/assets/menu.JPG)
 
 
 📕Installation
