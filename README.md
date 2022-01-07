@@ -9,7 +9,10 @@ Sistema de cadastro de produtos
 👓 
  * [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
  * Html/Css
+ * Angular Material and Bootstrap 4.6
  * API https://reqres.in/ 
+
+![login](https://github.com/itsmejunqueira/doubleit/src/assets/login.JPG)
 
  <img src="../../assets/login.JPG" alt="Login"/>
   <img src="../../assets/produtos.JPG" alt="Login"/>
@@ -43,3 +46,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Released in 2021.
+
+This project is under the DoubleIt.
+
+Made with love by Leticia Junqueira 🚀.
