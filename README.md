@@ -1,9 +1,14 @@
 # DoubleIt
 📌About
 Sistema de cadastro de produtos 
-- Tela de Login.
+- Tela de Login. 
 - Tela de Inicio.
 - Tela de Produtos: Listagem de produtos com criação, edição e exclusão de dados. 
+
+login de acesso - fornecida pela api publica: 
+
+    email: eve.holt@reqres.in,
+    password: cityslicka
 
 
 👓 

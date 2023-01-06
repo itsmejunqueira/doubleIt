@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -14,12 +15,15 @@ export class LoginComponent implements OnInit {
   formlogin: FormGroup;
   returnUrl: string;
   hasError: boolean;
+  public show_eye: boolean = true;
+
 
     constructor(
       private authService: AuthService,
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router) { }
+      private fb: FormBuilder,
+      private route: ActivatedRoute,    
+      private _toastrService: ToastrService,
+      private router: Router) { }
 
   ngOnInit(): void {
     this.loadForm();
@@ -43,6 +47,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         } else {
           this.hasError = true;
+          this._toastrService.error('Nome ou senha invalidos.', 'Acesso não permitido');
         }
       });
   }

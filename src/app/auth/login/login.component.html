@@ -5,12 +5,14 @@
                 <h1>Entre.</h1>
                 <hr>
                 <mat-form-field appearance="outline">
-                    <mat-label>Login</mat-label>
+                    <mat-label>Nome</mat-label>
                     <input matInput formControlName="login" id="login">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Senha</mat-label>
-                    <input matInput id="senha" formControlName="senha">
+                        <mat-icon matSuffix style="cursor: pointer;" (click)="show_eye = !show_eye">
+                            {{!show_eye ?'visibility':'visibility_off'}}</mat-icon>
+                    <input matInput id="senha" formControlName="senha"  type="{{!show_eye ?'text':'password'}}">
                 </mat-form-field>
                 <button type="submit" class="btn btn-purple btn-block mt-3">
                     Entrar

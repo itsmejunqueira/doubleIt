@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 
@@ -22,7 +22,11 @@ export class AuthHTTPService {
       "password": password,
       "username": email
     }
-    return this.http.post<any>(API_USERS_URL+"/login", data);
+    // return this.http.post<any>(API_USERS_URL+"/login", data);
+    if(email == 'email' && password == 'password') 
+    return of({token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJuYW1lIjoiSm9lIFNhbSJ9.RpYD7qsSX8UvhHeBarSe67yJo-OXU2UNtIvmme0u2vo'})
+     else 
+    return throwError(()=>new Error('login inválido'));
   }
   
   getAllUsers(): Observable<any[]> {

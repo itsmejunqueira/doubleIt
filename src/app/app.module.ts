@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list'; 
 import {MatDialogModule} from '@angular/material/dialog';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 
 function appInitializer(authService: AuthService) {
   return () => {
@@ -27,8 +28,7 @@ function appInitializer(authService: AuthService) {
   };
 }
 @NgModule({
-  declarations: [
-    
+  declarations: [    
     AppComponent,
     LoginComponent
   ],
@@ -48,7 +48,8 @@ function appInitializer(authService: AuthService) {
     MatInputModule,
     MatListModule,
     MatDialogModule,
-     
+    ToastrModule.forRoot(),
+    ToastContainerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

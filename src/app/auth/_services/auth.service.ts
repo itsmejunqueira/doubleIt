@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { AuthModel } from '../model/auth.model';
 import { AuthHTTPService } from './auth-http.service';
+import jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root',
@@ -52,7 +53,7 @@ export class AuthService implements OnDestroy {
         auth.token = res.token;
         auth.expiresIn = new Date(Date.now() + 3600);
         const result = this.setAuthFromLocalStorage(auth);
-        this.setUserFromLocalStorage({email: email});
+        this.setUserFromLocalStorage(res.token);
         return result;
       }),
       switchMap((res) => {
@@ -108,7 +109,8 @@ export class AuthService implements OnDestroy {
   }
 
   private setUserFromLocalStorage(user) {
-    localStorage.setItem("logged-user", JSON.stringify(user));
+    var decoded = jwt_decode(user);
+    localStorage.setItem("logged-user", JSON.stringify(decoded['name']));
   }
 
   ngOnDestroy() {

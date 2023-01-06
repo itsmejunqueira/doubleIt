@@ -2,7 +2,6 @@
 // @font-face { font-family: montserrat; src: url('./assets/fonts/Montserrat-Regular.ttf');}
 // @font-face { font-family: montserrat-bold; src: url('./assets/fonts/Montserrat-Bold.ttf');}
 // * { font-family: montserrat; }
-
 @import url("https://p.typekit.net/p.css?s=1&k=hzy7zyt&ht=tk&f=139.169.173.175.176.25136&a=44792538&app=typekit&e=css");
 
 @font-face {
@@ -59,3 +58,7 @@ body {
     min-width: 100vw;
     min-height: 100vh;
 }
+
+
+
+@import "~ngx-toastr/toastr";

@@ -11,7 +11,7 @@ import { LoginGuard } from './auth/_services/login.guard';
       { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
       {
         path: '',
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('./layout/layout.module').then((m) => m.LayoutModule),
       },
