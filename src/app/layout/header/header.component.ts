@@ -9,13 +9,14 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+   name: string = '';
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.name = this.authService.getUserFromLocalStorage();
   }
   getRoute(menuItem) {
     if (this.router.url === '/home' && menuItem === "inicio") {
