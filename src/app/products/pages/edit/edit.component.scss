@@ -2,3 +2,15 @@
     font-size  : 18px;
     font-weight: bold;
 }
+
+.mat-dialog-actions {
+    justify-content: end;
+    .btn{
+        box-shadow: none;
+    }
+    .btnget{
+     border: 1px solid #725172;
+     border-radius: 6px;
+     opacity: 1;
+    }
+}

@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { EditComponent } from './pages/edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteComponent } from './pages/delete/delete.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { DeleteComponent } from './pages/delete/delete.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-
+    NgxDropzoneModule
   ]
 })
 export class ProductsModule { }

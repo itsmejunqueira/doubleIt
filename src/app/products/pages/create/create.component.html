@@ -1,31 +1,70 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-    <h1 mat-dialog-title>Novo Produto.</h1>
-    <div mat-dialog-content>
-        <mat-form-field appearance="outline">
-            <mat-label>Nome</mat-label>
-            <input matInput formControlName="nome" id="nome">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Descrição</mat-label>
-            <input matInput formControlName="description" id="description">
-        </mat-form-field>
-        <div class="row">
-            <mat-form-field class="col-6" appearance="outline">
-                <mat-label>Preço</mat-label>
-                <input matInput formControlName="price" id="price">
-            </mat-form-field>
-            <mat-form-field class="col-6" appearance="outline">
-                <mat-label>Data Remessa</mat-label>
-                <input type="date" matInput formControlName="date" id="date">
-            </mat-form-field>
+  <h1 mat-dialog-title>Novo Produto.</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" id="nome" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="description" id="description" />
+    </mat-form-field>
+    <div class="row">
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Preço</mat-label>
+        <input matInput formControlName="price" id="price" />
+      </mat-form-field>
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Data Remessa</mat-label>
+        <input type="date" matInput formControlName="date" id="date" />
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Categorias</mat-label>
+      <input
+        matInput
+        formControlName="category"
+        id="categoria"
+        placeholder="Categorias (separe-as por vírgula)"
+      />
+    </mat-form-field>
+
+    <div
+      class="body mt-3 p-2 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="w-100 d-flex pre-files-holder" *ngIf="files">
+        <div *ngFor="let f of files" class="pre-files">
+          {{ f.name }}
+          <img
+            class="close ml-2"
+            (click)="onRemove(event)"
+            src="assets/close.svg"
+            alt=""
+          />
         </div>
-        <mat-form-field appearance="outline">
-            <mat-label>Categorias</mat-label>
-            <input matInput formControlName="category" id="categoria" placeholder="Categorias (separe-as por vírgula)">
-        </mat-form-field>
+      </div>
+      <div class="fileUpload">
+        <input
+          #fileUpload
+          style="display: none"
+          type="file"
+          id="fileUpload"
+          name="fileUpload"
+          (change)="loadFile($event)"
+          multiple="multiple"
+          (click)="fileUpload.value = null"
+        />
+        <span class="mr-2">Nenhum arquivo selecionado </span>
+        <button type="button" class="btn mr-2 btn-select" (click)="choseFile()">
+          Selecionar 
+        </button>
+      </div>
     </div>
-    <div mat-dialog-actions>
-        <button type="button" class="btn btnget mr-3" (click)="cancel()">Cancelar</button>
-        <button type="submit" class="btn btn-purple">Enviar</button>
-    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button type="button" class="btn btnget mr-3" (click)="cancel()">
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-purple">Enviar</button>
+  </div>
 </form>

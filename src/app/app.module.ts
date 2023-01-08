@@ -11,14 +11,17 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatCardModule} from '@angular/material/card';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatListModule} from '@angular/material/list'; 
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ProductsService } from './shared/services/products.service';
+import { SharedModule } from './shared/shared.module';
 
 function appInitializer(authService: AuthService) {
   return () => {
@@ -28,13 +31,10 @@ function appInitializer(authService: AuthService) {
   };
 }
 @NgModule({
-  declarations: [    
-    AppComponent,
-    LoginComponent
-  ],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
@@ -43,13 +43,15 @@ function appInitializer(authService: AuthService) {
     BrowserAnimationsModule,
     MatCardModule,
     MatMenuModule,
-    MatIconModule,    
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
     MatDialogModule,
     ToastrModule.forRoot(),
     ToastContainerModule,
+    NgxDropzoneModule,
+    SharedModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -59,7 +61,9 @@ function appInitializer(authService: AuthService) {
       useFactory: appInitializer,
       multi: true,
       deps: [AuthService],
-    },],
-  bootstrap: [AppComponent]
+    },
+    ,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
