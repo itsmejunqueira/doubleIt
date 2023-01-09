@@ -23,6 +23,37 @@
             <mat-label>Categorias</mat-label>
             <input matInput formControlName="category" id="categoria" placeholder="Categorias (separe-as por vírgula)">
         </mat-form-field>
+        <div
+      class="body mt-3 p-2 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="w-100 d-flex pre-files-holder" *ngIf="files">
+        <div *ngFor="let f of files" class="pre-files">
+          {{ f.name }}
+          <img
+            class="close ml-2"
+            (click)="onRemove($event)"
+            src="assets/close.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="fileUpload">
+        <input
+          #fileUpload
+          style="display: none"
+          type="file"
+          id="fileUpload"
+          name="fileUpload"
+          (change)="loadFile($event)"
+          multiple="multiple"
+          (click)="fileUpload.value = null"
+        />
+        <span class="mr-2">Nenhum arquivo selecionado </span>
+        <button type="button" class="btn mr-2 btn-select" (click)="choseFile()">
+          Selecionar 
+        </button>
+      </div>
+    </div>
     </div>
     <div mat-dialog-actions>
         <button type="button" class="btn btnget mr-3" (click)="cancel()">Cancelar</button>

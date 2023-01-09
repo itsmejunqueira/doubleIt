@@ -1,0 +1,64 @@
+<div class="body">
+  <div class="header d-flex justify-content-between align-items-center">
+    <h1>Meus Produtos.</h1>
+    <button type="add_product" class="btn btn-purple" mat-button (click)="newProduct()">
+      Adicionar produto
+    </button>
+  </div>
+  <hr class="divider">
+  <div class="row  d-flex justify-content-center">
+    <mat-form-field appearance="outline" class="search">
+      <mat-label>Busca</mat-label>
+      <mat-icon matSuffix style="cursor: pointer;">search</mat-icon>
+      <input matInput  [(ngModel)]="search" (ngModelChange)="searchByString()" type="text">
+    </mat-form-field>
+    <div class="session-table">
+      <div *ngIf="!products.length" class="session-list-empty">
+        <div class="session-list-empty-texts">
+          <h4>Sem itens no momento...</h4>
+        </div>
+      </div>
+      <div class="mt-2 table-container" *ngIf="products.length">
+        <table class="table header-fixed table-hover" width="100%">
+          <thead>
+            <tr>
+              <th *ngFor="let item of selectedHeaderItems; let i = index" class="align-middle" scope="col">
+                <span>{{ item?.label }}
+                  <i class="arrow" *ngIf="item.canSort">
+                    <img class="ordering" [ngClass]="item.isSorted ? 'rotate' : 'reverse'" src="assets/down_white.svg"
+                      (click)="sort(item)" /></i>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index" [ngClass]="i % 2 != 0 ? 'background-zebra' : ''">
+              <td class=""><button mat-icon-button [matMenuTriggerFor]="menu" class="btn btn-menu"
+                  aria-label="icon-button-menu">
+                  <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <div mat-menu-item (click)="editProduct(item)">
+                    <button class="btn btn-purple rounded-circle">
+                      <i class="fa fa-pencil"></i>
+                    </button>
+                    <span class="ml-1">Editar</span>
+                  </div>
+                  <div mat-menu-item (click)="deleteProduct(item)">
+                    <button class="btn btn-danger rounded-circle">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                    <span class="ml-1">Excluir</span>
+                  </div>
+                </mat-menu>
+              </td>
+              <td class="align-middle" [innerHTML]="item?.name"></td>
+              <td class="align-middle" [innerHTML]="item?.description"></td>
+              <td class="align-middle" [innerHTML]="item?.price"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

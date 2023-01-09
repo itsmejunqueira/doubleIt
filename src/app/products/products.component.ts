@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateComponent } from './pages/create/create.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { ProductsService } from '../shared/services/products.service';
+import { TProducts } from '../shared/models/product.model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -11,22 +13,29 @@ import { ProductsService } from '../shared/services/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public products = this._ProductsService.getAllproducts();
+  public products:TProducts[] = [];
 
   constructor(
     public dialog: MatDialog,
     private _ProductsService: ProductsService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  loadProducts(){
+    this._ProductsService.getAllproducts().subscribe((productsResult)=>{
+      this.products = productsResult;
+    });
+  }
 
   newProduct() {
     const dialogRef = this.dialog.open(CreateComponent);
-
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result) {
-        this.products.push(result);
+        this.loadProducts();
       }
     });
   }
@@ -39,19 +48,19 @@ export class ProductsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result) {
-        const index = this.products.indexOf(item);
-        this.products[index] = result;
+        this.loadProducts();
       }
     });
   }
 
   deleteProduct(item) {
-    const dialogRef = this.dialog.open(DeleteComponent);
+    const dialogRef = this.dialog.open(DeleteComponent, {
+      data: item,
+    });
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
       if (result == true) {
-        const index = this.products.indexOf(item);
-        this.products.splice(index, 1);
+        this.loadProducts();
       }
     });
   }

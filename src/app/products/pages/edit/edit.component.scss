@@ -14,3 +14,67 @@
      opacity: 1;
     }
 }
+
+.body {
+    width        : 529px;
+    height       : 246px;
+    background   : #ffffff 0% 0% no-repeat padding-box;
+    border       : 1px solid #848484;
+    border-radius: 6px;
+    opacity      : 1;
+
+    span {
+        text-align    : left;
+        font          : normal normal medium 14px/17px proxima-nova;
+        letter-spacing: 0px;
+        color         : #606060;
+        opacity       : 1;
+    }
+
+    .pre-files-holder {
+        margin-bottom: 5px;
+
+        .pre-files {
+
+            background   : #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow   : 0px 2px 6px #F7F7F729;
+            border       : 1px solid #725172;
+            border-radius: 40px;
+            opacity      : 1;
+            padding      : 6px 10px;
+            margin-bottom: 5px;
+            margin-left  : 2px;
+
+            text-align    : left;
+            font          : normal normal medium 16px/20px Proxima Nova;
+            letter-spacing: 0px;
+            color         : #1F1F1F;
+            opacity       : 1;
+
+            .close {
+                width        : 19px;
+                height       : 19px;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .fileUpload {
+        display    : flex;
+        align-items: center;
+        height     : 70%;
+    }
+
+    .btn-select {
+        width         : 95px;
+        height        : 44px;
+        background    : #725172 0% 0% no-repeat padding-box;
+        border-radius : 6px;
+        box-shadow    : none;
+        text-align    : left;
+        font          : normal normal 600 14px/17px proxima-nova;
+        letter-spacing: 0px;
+        color         : #FFFFFF;
+        opacity       : 1;
+    }
+}

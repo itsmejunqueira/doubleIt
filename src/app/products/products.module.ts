@@ -14,6 +14,7 @@ import { EditComponent } from './pages/edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeleteComponent } from './pages/delete/delete.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ListComponent } from './pages/list/list.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ProductsComponent,
     CreateComponent,
     EditComponent,
+    ListComponent,
     DeleteComponent
   ],
   imports: [
