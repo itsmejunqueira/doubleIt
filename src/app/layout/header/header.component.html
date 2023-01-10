@@ -5,7 +5,42 @@
                 <img class="logo" src="../../assets/logo.png" alt="logo">
             </a>
         </span>
-        <div class="nav-menu"> 
+        <button class="navbar-toggler w-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse menu-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" [ngClass]="getRoute('inicio')">
+                    <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" [ngClass]="getRoute('produtos')">
+                    <a class="nav-link" [routerLink]="['/produtos']">Produtos</a>
+                </li>
+                <li class="nav-item" [ngClass]="getRoute('produtos/lista')">
+                    <a class="nav-link" [routerLink]="['/produtos/lista']">Lista</a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-0 name-holder">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="btn btn-menu p-0" aria-label="icon-button-menu">
+                <img class="user" src="../../assets/perfil.png" alt="user">
+                <span class="ml-2"> {{name}}</span>
+            </button>
+            <mat-menu #menu="matMenu">
+                <div mat-menu-item>
+                     <span class="ml-1" [routerLink]="['/home']">Home</span>
+                </div>
+                <div mat-menu-item>
+                     <span class="ml-1" [routerLink]="['/produtos']">Produtos</span>
+                </div>
+                <div mat-menu-item>
+                     <span class="ml-1" [routerLink]="['/produtos/lista']">Lista</span>
+                </div>
+            </mat-menu>
+        </form>
+        <!-- <div class="nav-menu"> 
           <ul> 
               <li [ngClass]="getRoute('inicio')">
                   <a [routerLink]="['/home']">Inicio</a>  
@@ -18,10 +53,10 @@
               </li>
           </ul>
         </div>
-        <div class="navbar-nav d-flex align-items-center">
+        <div class="navbar-nav">
             <span class="v-divider"></span>
             <img class="user" src="../../assets/perfil.png" alt="user">
             <span class="ml-2"> {{name}}</span>
-        </div>
+        </div> -->
     </div>
 </div>

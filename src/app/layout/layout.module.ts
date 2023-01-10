@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    MatIconModule,
+    MatMenuModule
   ]
 })
 export class LayoutModule { }

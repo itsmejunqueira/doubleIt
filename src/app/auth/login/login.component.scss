@@ -1,3 +1,4 @@
+@import "../../../assets/scss/breakpoints.scss";
 .purple-gradient{
     background: rgb(98,50,98);
     background: linear-gradient(180deg, rgba(98,50,98,1) 0%, rgba(242,216,219,1) 100%);
@@ -5,6 +6,11 @@
 
 .white-container{
     background: #FFFDFD;
+    @include for-phone-only{
+        width: 100vw;
+        display: grid;
+        align-items: center;
+    }
 }
 
 .login-body {
@@ -24,23 +30,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include for-phone-only{
+        min-width: 90vw;
+        max-width: 90vw;    
+    }
 }
 .input-holder{
-    width: 384px;
+    // width: 384px;
     align-items: center;
-    //margin: 0px 10px;
     h1{
         font-weight: bold;
         font-size: 36px;
+    }
+    @include for-phone-only{
+        padding:  10px;
+        display: grid;
+        align-items: center;
     }
 }
 
 hr {
     border: none;
     height: 1px;
-    /* Set the hr color */
-    color: #CCCCCC; /* old IE */
-    background-color: #CCCCCC; /* Modern Browsers */
+    color: #CCCCCC;
+    background-color: #CCCCCC; 
 }
 
 .logo{

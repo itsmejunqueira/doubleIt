@@ -1,3 +1,4 @@
+@import "../../../../assets/scss/breakpoints.scss";
 .header {
     margin : 4px;
     padding: 7px;
@@ -63,4 +64,11 @@
 }
 .search{
     width: 759px;
+    @include for-phone-only{
+        width: 90%;
+    }
+}
+
+.session-table{
+    width: 100%;
 }

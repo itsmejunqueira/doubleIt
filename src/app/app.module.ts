@@ -1,3 +1,4 @@
+import { LayoutModule } from './layout/layout.module';
 import { LoginComponent } from './auth/login/login.component';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
